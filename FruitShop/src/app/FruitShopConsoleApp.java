@@ -20,17 +20,26 @@ import order.OrderItemVO;
 import order.OrderService;
 import order.OrderServiceImpl;
 import order.OrderVO;
+import wish.WishService;
+import review.ReviewService;
+import review.ReviewService;
 
 
 public class FruitShopConsoleApp {
 	
 	String[] startMenuList = {"종료", "과일 목록", "로그인", "회원가입"};
 	String[] adminMenuList = {"로그아웃", "과일 목록", "과일 등록", "과일 정보 수정", "과일 삭제", "회원 목록", "주문 목록"};
-	String[] memberMenuList = {"로그아웃", "과일 목록", "과일 검색", "과일 가격 정렬", "과일 주문", "주문 목록", "장바구니 과일 담기", "장바구니 보기", "내 정보"};
+	String[] memberMenuList = {"로그아웃", "과일 목록", "과일 검색", "과일 가격 정렬", "과일 주문", "주문 목록", "장바구니 과일 담기", "장바구니 보기", "내 정보", "찜하기", "찜 목록 보기", "리뷰 작성", "리뷰 목록 보기"};
 	String[] cartMenuList = {"돌아가기", "과일 주문", "과일 삭제", "장바구니 비우기"};
 	String[] myInfoMenuList = {"돌아가기", "비밀번호 변경", "회원 탈퇴"};
 	
-	final String ADMIN_ID = "admin";
+	
+
+
+	WishService wishService = new WishService();
+	ReviewService reviewService = new ReviewService();
+
+final String ADMIN_ID = "admin";
 	final String ADMIN_PWD = "1234";
 	final String ADMIN_NAME = "관리자";
 	
@@ -41,8 +50,11 @@ public class FruitShopConsoleApp {
 	MemberService ms = new YJMemberService(new ObjFileHashMapMemberDAO());
 	OrderService os = new OrderServiceImpl(new ObjFileHashMapOrderDAO(), fs);
 	CartService cs = new CartServiceImpl(new HashMapCartDAO());
+	WishService ws = new WishService();
+	ReviewService rs = new ReviewService();
 
-	
+
+
 	MemberVO loggedMember;
 	
 	MyAppReader input = new MyAppReader();
@@ -144,7 +156,46 @@ public class FruitShopConsoleApp {
 			case 6 : menuAddFruit2Cart(); break;
 			case 7 : menuCartView(); break;
 			case 8 : menuMyInfo(); break;
-			case 0 : menuLogout(); break;
+			
+            case 9 : // 찜하기
+                System.out.println("*** 찜하기 ***");
+                displayAvailableFruitList();
+                int wishFruitNo = input.readInt(">> 찜할 과일 번호 : ");
+                FruitVO wishFruit = fs.detailFruitInfo(wishFruitNo);
+                if (wishFruit != null) {
+                    ws.addWish(loggedMember, wishFruit);
+                } else {
+                    System.out.println("존재하지 않는 과일입니다.");
+                }
+                break;
+            case 10 : // 찜 목록 보기
+                System.out.println("*** 찜 목록 보기 ***");
+                ws.viewWishList(loggedMember);
+                break;
+            case 11 : // 리뷰 작성
+                System.out.println("*** 리뷰 작성 ***");
+                displayFruitList();
+                int reviewFruitNo = input.readInt(">> 리뷰할 과일 번호 : ");
+                FruitVO reviewFruit = fs.detailFruitInfo(reviewFruitNo);
+                if (reviewFruit != null) {
+                    String content = input.readString(">> 리뷰 내용 입력 : ");
+                    int rating = input.readInt(">> 별점 (1~5) 입력 : ");
+                    rs.addReview(loggedMember, reviewFruit, content, rating);
+                } else {
+                    System.out.println("존재하지 않는 과일입니다.");
+                }
+                break;
+            case 12 : // 리뷰 목록 보기
+                System.out.println("*** 리뷰 목록 보기 ***");
+                int viewReviewNo = input.readInt(">> 리뷰 볼 과일 번호 : ");
+                FruitVO viewFruit = fs.detailFruitInfo(viewReviewNo);
+                if (viewFruit != null) {
+                    rs.viewReviewsByProduct(viewFruit);
+                } else {
+                    System.out.println("존재하지 않는 과일입니다.");
+                }
+                break;
+case 0 : menuLogout(); break;
 			default : menuWrongNumber();
 			}
 		} while (menu != 0);
