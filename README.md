@@ -30,7 +30,13 @@ wish : 찜하기, 찜 목록 보기와 같은 기능들이 담고 있는 패키�
 
 ## 콘솔 시연 영상
 
+### 회원 메뉴
+
 ![FruitShop – FruitShopConsoleApp java 2025-06-24 20-22-57](https://github.com/user-attachments/assets/cfc45724-5586-4525-85cd-a0f64fe33806)
+
+### 관지라 메뉴
+
+https://github.com/user-attachments/assets/55cef3da-3ab0-4d4b-a61d-c7e927895a74
 
 
 ## 코드리뷰 결과 [수정 완료]
