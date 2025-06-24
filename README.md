@@ -1,4 +1,11 @@
-# 과일 판매 쇼핑몰(FruitShop) 패키지 설명
+# 목차
+
+    1. 패키지 설명
+    2. Use-case Diagram
+    3. 콘솔 시연 영상
+    4. 코드리뷰 결과
+
+## 과일 판매 쇼핑몰(FruitShop) 패키지 설명
 
 ![image](https://github.com/user-attachments/assets/bcc80097-343d-46cf-8bbf-73849664ea35)
 
@@ -17,16 +24,16 @@ review : 리뷰 작성, 리뷰 보기와 같은 기능들을 담고 있는 패�
 
 wish : 찜하기, 찜 목록 보기와 같은 기능들이 담고 있는 패키지.
 
-# Use-case Diagram
+## Use-case Diagram
 ![image](https://github.com/user-attachments/assets/54a2cab9-03ac-4259-ba99-ff4b442fe558)
 
 
-# 콘솔 시연 영상
+## 콘솔 시연 영상
 
 ![FruitShop – FruitShopConsoleApp java 2025-06-24 20-22-57](https://github.com/user-attachments/assets/cfc45724-5586-4525-85cd-a0f64fe33806)
 
 
-# 코드리뷰 결과 [수정 완료]
+## 코드리뷰 결과 [수정 완료]
 
 ![image](https://github.com/user-attachments/assets/b85acc9d-35eb-475a-b406-4a437b9430e0)
 
