@@ -10,4 +10,6 @@ public interface FruitService {
 	boolean updateFruitPrice(int fruitNo, int price);
 	boolean updateFruitInstock(int fruitNo, int instock);
 	boolean removeFruit(int fruitNo);
+	List<FruitVO> searchFruitsByName(String keyword);
+	List<FruitVO> sortFruitsByPrice(boolean asc);
 }

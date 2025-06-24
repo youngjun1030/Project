@@ -21,11 +21,12 @@ import order.OrderService;
 import order.OrderServiceImpl;
 import order.OrderVO;
 
+
 public class FruitShopConsoleApp {
 	
 	String[] startMenuList = {"종료", "과일 목록", "로그인", "회원가입"};
 	String[] adminMenuList = {"로그아웃", "과일 목록", "과일 등록", "과일 정보 수정", "과일 삭제", "회원 목록", "주문 목록"};
-	String[] memberMenuList = {"로그아웃", "과일 목록", "과일 주문", "주문 목록", "장바구니 과일 담기", "장바구니 보기", "내 정보"};
+	String[] memberMenuList = {"로그아웃", "과일 목록", "과일 검색", "과일 가격 정렬", "과일 주문", "주문 목록", "장바구니 과일 담기", "장바구니 보기", "내 정보"};
 	String[] cartMenuList = {"돌아가기", "과일 주문", "과일 삭제", "장바구니 비우기"};
 	String[] myInfoMenuList = {"돌아가기", "비밀번호 변경", "회원 탈퇴"};
 	
@@ -35,10 +36,13 @@ public class FruitShopConsoleApp {
 	
 	final String CONFIRM = "yes";
 	
+
 	FruitService fs = new YJFruitService(new ObjFileHashMapFruitDAO());
 	MemberService ms = new YJMemberService(new ObjFileHashMapMemberDAO());
 	OrderService os = new OrderServiceImpl(new ObjFileHashMapOrderDAO(), fs);
 	CartService cs = new CartServiceImpl(new HashMapCartDAO());
+
+	
 	MemberVO loggedMember;
 	
 	MyAppReader input = new MyAppReader();
@@ -130,14 +134,16 @@ public class FruitShopConsoleApp {
 		int menu;
 		do {
 			menu = selectMenu(memberMenuList);
-			// "로그아웃", "과일 목록", "과일 주문", "주문 목록", "장바바구니 과일 담기", "장바구니 보기", "내 정보"
+			// "로그아웃", "과일 목록", "과일 검색", "과일 가격 정렬", "과일 주문", "주문 목록", "장바바구니 과일 담기", "장바구니 보기", "내 정보"
 			switch (menu) {
 			case 1 : menuFruitList(); break;
-			case 2 : menuFruitOrder(); break;
-			case 3 : menuOrderList(); break;
-			case 4 : menuAddFruit2Cart(); break;
-			case 5 : menuCartView(); break;
-			case 6 : menuMyInfo(); break;
+			case 2 : menuSearchFruit(); break;
+			case 3 : menuSortFruitByPrice(); break;
+			case 4 : menuFruitOrder(); break;
+			case 5 : menuOrderList(); break;
+			case 6 : menuAddFruit2Cart(); break;
+			case 7 : menuCartView(); break;
+			case 8 : menuMyInfo(); break;
 			case 0 : menuLogout(); break;
 			default : menuWrongNumber();
 			}
@@ -145,6 +151,22 @@ public class FruitShopConsoleApp {
 
 	}
 	
+	private void menuSortFruitByPrice() {
+	    System.out.println("과일 가격 정렬");
+	    int sel = Integer.parseInt(input.readString("1. 가격 오름차순 | 2. 가격 내림차순 선택: "));
+	    boolean asc = (sel == 1);
+	    List<FruitVO> list = fs.sortFruitsByPrice(asc);
+	    list.forEach(System.out::println);
+	}
+
+	private void menuSearchFruit() {
+	    System.out.println("과일 검색");
+	    String keyword = input.readString("검색할 과일 이름 키워드: ");
+	    List<FruitVO> list = fs.searchFruitsByName(keyword);
+	    list.forEach(System.out::println);
+	}
+
+
 	private void menuFruitOrder() {
 		System.out.println("*** 과일 주문 ***");
 		displayAvailableFruitList();
@@ -435,7 +457,7 @@ public class FruitShopConsoleApp {
 	private void menuFruitRegist() {
 		
 		System.out.println("*** 과일 등록 ***");
-		String name = input.readString(">> 과일 제목 : ");
+		String name = input.readString(">> 과일 이름 : ");
 		String farm = input.readString(">> 농장 : ");
 		String country = input.readString(">> 원산지 : ");
 		int price = input.readInt(">> 가격 : ");
