@@ -17,6 +17,10 @@ review : 리뷰 작성, 리뷰 보기와 같은 기능들을 담고 있는 패�
 
 wish : 찜하기, 찜 목록 보기와 같은 기능들이 담고 있는 패키지.
 
+# Use-case Diagram
+![image](https://github.com/user-attachments/assets/54a2cab9-03ac-4259-ba99-ff4b442fe558)
+
+
 # 콘솔 시연 영상
 
 ![FruitShop – FruitShopConsoleApp java 2025-06-24 20-22-57](https://github.com/user-attachments/assets/cfc45724-5586-4525-85cd-a0f64fe33806)
