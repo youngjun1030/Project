@@ -26,5 +26,20 @@ wish : 찜하기, 찜 목록 보기와 같은 기능들이 담고 있는 패키�
 ![FruitShop – FruitShopConsoleApp java 2025-06-24 20-22-57](https://github.com/user-attachments/assets/cfc45724-5586-4525-85cd-a0f64fe33806)
 
 
-# 코드리뷰 결과
+# 코드리뷰 결과 [수정 완료]
 
+![image](https://github.com/user-attachments/assets/b85acc9d-35eb-475a-b406-4a437b9430e0)
+
+addItem2Cart -> addItemToCart [수정]
+
+![image](https://github.com/user-attachments/assets/d5fb44c7-62a4-4009-bf04-172c71c0a712)
+
+장바구니 도서 담기 -> 장바구니 과일 담기 [수정]
+
+![image](https://github.com/user-attachments/assets/b052619a-fb36-42fb-bf78-69926a7f4eea)
+
+없는 도서 입니다. -> 없는 과일 입니다. [수정]
+
+![image](https://github.com/user-attachments/assets/e6d7eb60-7a39-4c9e-91c0-338fbf832e9b)
+
+장바구니의 모든 도서를 삭제하시겠습니까? -> 장바구니의 모든 과일을 삭제하시겠습니까? [수정]
