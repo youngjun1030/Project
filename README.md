@@ -36,27 +36,30 @@ wish : 찜하기, 찜 목록 보기와 같은 기능들을 담는 패키지.
 
 ### 회원 메뉴
 
-![FruitShop – FruitShopConsoleApp java 2025-06-24 20-22-57](https://github.com/user-attachments/assets/cfc45724-5586-4525-85cd-a0f64fe33806)
+https://github.com/user-attachments/assets/e767d6cd-0623-4459-9aeb-107aff0007f2
+
+https://github.com/user-attachments/assets/095411ae-3d3f-479c-9059-46e075b7196b
+
 
 ### 관지라 메뉴
 
-https://github.com/user-attachments/assets/55cef3da-3ab0-4d4b-a61d-c7e927895a74
+https://github.com/user-attachments/assets/2e000805-5854-4074-b798-79d57eabef8b
 
 
 ## 코드리뷰 결과 [수정 완료]
 
-![image](https://github.com/user-attachments/assets/b85acc9d-35eb-475a-b406-4a437b9430e0)
+![image](https://github.com/user-attachments/assets/ee636e0e-80aa-4e31-a372-e1157d71ad18)
 
-addItem2Cart -> addItemToCart [수정]
+#### addItem2Cart -> addItemToCart [수정]
 
-![image](https://github.com/user-attachments/assets/d5fb44c7-62a4-4009-bf04-172c71c0a712)
+![image](https://github.com/user-attachments/assets/c8e26b68-cbd8-48a4-a6ff-e7b28eb768fb)
 
-장바구니 도서 담기 -> 장바구니 과일 담기 [수정]
+#### 장바구니 도서 담기 -> 장바구니 과일 담기 [수정]
 
-![image](https://github.com/user-attachments/assets/b052619a-fb36-42fb-bf78-69926a7f4eea)
+![image](https://github.com/user-attachments/assets/a40f0240-3873-4508-b0a4-553b33f0adc0)
 
-없는 도서 입니다. -> 없는 과일 입니다. [수정]
+#### 없는 도서 입니다. -> 없는 과일 입니다. [수정]
 
-![image](https://github.com/user-attachments/assets/e6d7eb60-7a39-4c9e-91c0-338fbf832e9b)
+![image](https://github.com/user-attachments/assets/523a16fc-fe3e-4ffd-bb09-928f79fc2ee9)
 
-장바구니의 모든 도서를 삭제하시겠습니까? -> 장바구니의 모든 과일을 삭제하시겠습니까? [수정]
+#### 장바구니의 모든 도서를 삭제하시겠습니까? -> 장바구니의 모든 과일을 삭제하시겠습니까? [수정]
