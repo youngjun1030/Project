@@ -2,8 +2,9 @@
 
     1. 패키지 설명
     2. Use-case Diagram
-    3. 콘솔 시연 영상
-    4. 코드리뷰 결과
+    3. Activity Diagram
+    4. 콘솔 시연 영상
+    5. 코드리뷰 결과
 
 ## 과일 판매 쇼핑몰(FruitShop) 패키지 설명
 
@@ -29,7 +30,13 @@ review : 리뷰 작성, 리뷰 보기와 같은 기능들을 담는 패키지.
 wish : 찜하기, 찜 목록 보기와 같은 기능들을 담는 패키지.
 
 ## Use-case Diagram
+
 ![image](https://github.com/user-attachments/assets/54a2cab9-03ac-4259-ba99-ff4b442fe558)
+
+
+## Activity Diagram
+
+![image](https://github.com/user-attachments/assets/2ffbc4db-257f-4357-aed9-875dbd5df6ef)
 
 
 ## 콘솔 시연 영상
